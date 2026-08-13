@@ -17,15 +17,15 @@
 <td width="50%">
 
 ### 💼 当前状态
-- 🔭 **正在开发**: Han-note  
+- 🔭 **正在开发**: Han-note-2.0  
   *基于 Spring Alibaba Cloud 的仿小红书微服务项目*
   
 - 🌱 **正在学习**: 
   - 后端：Golang, C++, C, Rust, Python
   - 前端：Vue, React
 
-- 👯 **寻求合作**: Han-coder  
-  *使用 Spring-AI 重构架构设计（目前使用 LangChain4J，版本不稳定）*
+- 👯 **寻求合作**: Han-note-2.0  
+  *使用 最新的java技术栈 重构架构设计（原版使用中间件版本较低）*
 
 </td>
 <td width="50%">
