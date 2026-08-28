@@ -6,7 +6,10 @@
 
 在成都写代码，也持续记录学习与思考。
 
-[数字花园](https://likeyy.love) · [Email](mailto:hanserwei@qq.com)
+<p>
+  <a href="https://likeyy.love"><img src="https://img.shields.io/badge/Blog-likeyy.love-3b82f6?style=flat-square&logo=bookstack&logoColor=white" alt="Digital Garden" /></a>
+  <a href="mailto:hanserwei@qq.com"><img src="https://img.shields.io/badge/Email-hanserwei%40qq.com-8b5cf6?style=flat-square&logo=minutemailer&logoColor=white" alt="Email" /></a>
+</p>
 
 </div>
 
@@ -27,12 +30,16 @@
 
 ### Toolbox
 
-`Java` · `Spring Boot` · `Spring Cloud` · `PostgreSQL` · `Redis` · `Rust` · `Go` · `Python` · `Linux` · `Containers`
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=java,spring,postgres,redis,rust,go,python,linux,docker,git&theme=dark&perline=10" alt="Java, Spring, PostgreSQL, Redis, Rust, Go, Python, Linux, Docker and Git" />
+</div>
+
+<p align="center"><sub>Java · Spring · PostgreSQL · Redis · Rust · Go · Python · Linux · Docker · Git</sub></p>
 
 ### Elsewhere
 
 - 在 [likeyy.love](https://likeyy.love) 记录技术笔记与长期思考
-- 欢迎通过 [hanserwei@qq.com](mailto:hanserwei@qq.com) 与我交流
+- 欢迎通过 [hanserwei@qq.com](mailto:hanserwei@qq.com) 与我交流和协作
 
 ---
 
