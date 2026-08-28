@@ -26,7 +26,6 @@
 | [han-note-2.0](https://github.com/Hanserwei/han-note-2.0) | 基于现代 Java 技术栈的微服务实践项目 | Java · Spring Boot · Spring Cloud |
 | [podman-tui](https://github.com/Hanserwei/podman-tui) | 面向 Podman 的原生终端管理界面 | Rust |
 | [ai-agent-context-ablation](https://github.com/Hanserwei/ai-agent-context-ablation) | AI Agent 上下文消融实验与结果分析 | Python |
-| [quartz-notes](https://github.com/Hanserwei/quartz-notes) | 使用 Quartz 构建的个人数字花园 | Quartz · HTML |
 
 ### Toolbox
 
