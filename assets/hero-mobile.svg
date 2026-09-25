@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Hanser Wei — Personal Lab</title>
+  <desc id="desc">成都的后端开发者。用代码构建，用实验求证，用文字记录。likeyy.love</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#141e25"/><stop offset="1" stop-color="#201b31"/></linearGradient>
+    <linearGradient id="line"><stop stop-color="#b4f272"/><stop offset="1" stop-color="#b6a0ff"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#c9dbf1" stroke-opacity=".04"/></pattern>
+    <style>.sans{font-family:Inter,Segoe UI,Arial,sans-serif}.mono{font-family:ui-monospace,Consolas,monospace}.cn{font-family:Arial,PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif}</style>
+  </defs>
+  <rect x="1" y="1" width="718" height="478" rx="24" fill="url(#bg)" stroke="#303647"/>
+  <rect x="1" y="1" width="718" height="478" rx="24" fill="url(#grid)"/>
+  <path d="M26 1H694" stroke="url(#line)" stroke-width="2"/>
+  <circle cx="42" cy="47" r="5" fill="#b4f272"/>
+  <text x="59" y="53" fill="#b4f272" class="mono" font-size="18" letter-spacing="2">HANSERWEI / PERSONAL LAB</text>
+  <text x="34" y="158" fill="#f2f5ed" class="sans" font-size="85" font-weight="750" letter-spacing="-4">Hanser Wei<tspan fill="#b4f272">.</tspan></text>
+  <text x="39" y="209" fill="#bdc5d4" class="sans" font-size="25">Backend engineer. Open-source builder.</text>
+  <text x="39" y="262" fill="#e0e6e9" class="cn" font-size="27">用代码构建，用实验求证，用文字记录。</text>
+  <rect x="37" y="301" width="646" height="73" rx="13" fill="#0c121b" stroke="#3c4657"/>
+  <text x="58" y="345" fill="#d6dfeb" class="mono" font-size="24"><tspan fill="#b4f272">❯ </tspan>build → measure → learn<tspan fill="#b6a0ff">_</tspan></text>
+  <path d="M38 411H682" stroke="#384052"/>
+  <text x="39" y="449" fill="#9baabe" class="mono" font-size="20">CHENGDU · UTC+8</text>
+  <text x="681" y="449" text-anchor="end" fill="#b4f272" class="mono" font-size="22">likeyy.love ↗</text>
+</svg>

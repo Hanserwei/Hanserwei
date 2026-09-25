@@ -1,0 +1,133 @@
+{
+  "github": {
+    "public_repos": 22,
+    "repos": [
+      {
+        "name": "hanlo-theme",
+        "description": "halo-theme-hao 独立维护版本",
+        "language": "HTML",
+        "stars": 0,
+        "pushed_at": "2026-09-24T04:50:19Z"
+      },
+      {
+        "name": "han-menu",
+        "description": "外卖业务 DDD 模块化单体：Java 25 / Spring Boot 后端与 Vue 3 管理端，支持 Podman 本机部署。",
+        "language": "Java",
+        "stars": 0,
+        "pushed_at": "2026-09-22T15:07:44Z"
+      },
+      {
+        "name": "hanserwei-springboot-ddd",
+        "description": "Spring Boot 4.1 and JDK 25 DDD scaffold",
+        "language": "Java",
+        "stars": 1,
+        "pushed_at": "2026-09-21T03:25:41Z"
+      },
+      {
+        "name": "tailscale-home-services",
+        "description": "Tailscale 家庭服务统一域名与自动 HTTPS：DNSPod DNS-01、Nginx 双地址反向代理、受限 SSH 证书同步及 systemd 定时任务。",
+        "language": "Python",
+        "stars": 0,
+        "pushed_at": "2026-09-17T15:24:41Z"
+      },
+      {
+        "name": "yudao-cloud-full",
+        "description": "持续构建与探索中。",
+        "language": "Java",
+        "stars": 0,
+        "pushed_at": "2026-09-16T14:29:48Z"
+      },
+      {
+        "name": "mysql-single-table-bench",
+        "description": "MySQL 9.7 单表 5 亿行订单压测：可续跑造数、完整实测证据、PostgreSQL 对照、Vditor 图表与离线文档",
+        "language": "Python",
+        "stars": 0,
+        "pushed_at": "2026-09-15T18:01:35Z"
+      },
+      {
+        "name": "pg-single-table-bench",
+        "description": "PostgreSQL 18 单表 5 亿行订单读写压测：可续跑造数、完整实测报告、Vditor 原生图表博客与离线阅读版",
+        "language": "Python",
+        "stars": 0,
+        "pushed_at": "2026-09-14T13:51:42Z"
+      },
+      {
+        "name": "design-patterns-java25",
+        "description": "Java 25 + Gradle：GoF 23 种设计模式与简单工厂，配套中文教程、完整 OOP 示例及 49 项测试。",
+        "language": "Java",
+        "stars": 0,
+        "pushed_at": "2026-09-13T09:01:42Z"
+      },
+      {
+        "name": "Tieba_mobile_emotions_svg",
+        "description": "113 transparent path-based SVG conversions of Tieba mobile emoticons, with previews and reproducible tooling",
+        "language": "Python",
+        "stars": 0,
+        "pushed_at": "2026-09-06T11:37:56Z"
+      },
+      {
+        "name": "astro-han",
+        "description": "持续构建与探索中。",
+        "language": "Astro",
+        "stars": 0,
+        "pushed_at": "2026-09-03T12:15:37Z"
+      },
+      {
+        "name": "halo-cli",
+        "description": "Halo 插件配套命令行工具，用于管理文章、分类和标签",
+        "language": "TypeScript",
+        "stars": 0,
+        "pushed_at": "2026-08-31T15:26:56Z"
+      },
+      {
+        "name": "han-note-2.0",
+        "description": "hannote — Spring Boot 4.1 + Spring Cloud Alibaba 2025.1.0 微服务练习项目（个人学习复刻，MyBatis-Plus + PostgreSQL + HikariCP）",
+        "language": "Java",
+        "stars": 6,
+        "pushed_at": "2026-08-29T07:27:21Z"
+      },
+      {
+        "name": "ai-agent-context-ablation",
+        "description": "AI Agent 上下文消融实验（来源 bojieli/ai-agent-book chapter1/context 实验1-1），含运行结果与分析",
+        "language": "Python",
+        "stars": 0,
+        "pushed_at": "2026-08-22T12:08:31Z"
+      },
+      {
+        "name": "podman-tui",
+        "description": "Podman-native terminal management UI written in Rust",
+        "language": "Rust",
+        "stars": 1,
+        "pushed_at": "2026-08-01T04:44:01Z"
+      }
+    ]
+  },
+  "posts": [
+    {
+      "title": "从零重构外卖系统（一）：先理解业务，再用 Spring Modulith 搭建 DDD 骨架",
+      "url": "https://likeyy.love/archives/han-menu-01-ddd-modulith",
+      "published": "2026-09-22T14:34:50+00:00"
+    },
+    {
+      "title": "从零重构外卖系统（二）：把员工账号规则落地为领域模型、JPA 和 REST API",
+      "url": "https://likeyy.love/archives/han-menu-02-employee-identity",
+      "published": "2026-09-22T14:34:50+00:00"
+    },
+    {
+      "title": "从零重构外卖系统（三）：商品、套餐与营业状态，怎样从 CRUD 走向业务建模",
+      "url": "https://likeyy.love/archives/han-menu-03-catalog-consistency",
+      "published": "2026-09-22T14:34:49+00:00"
+    },
+    {
+      "title": "从零重构外卖系统（四）：顾客身份、默认地址与购物车，怎样设计归属和一致性",
+      "url": "https://likeyy.love/archives/han-menu-04-customer-cart",
+      "published": "2026-09-22T14:34:48+00:00"
+    },
+    {
+      "title": "从零重构外卖系统（五）：订单快照、幂等提交与购物车结算，怎样保证一次下单只发生一次",
+      "url": "https://likeyy.love/archives/han-menu-05-order-idempotency",
+      "published": "2026-09-22T14:34:47+00:00"
+    }
+  ],
+  "updated_at": "2026-09-25 19:40 CST (UTC+8)"
+}

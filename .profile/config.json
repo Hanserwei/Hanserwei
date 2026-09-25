@@ -1,0 +1,75 @@
+{
+  "username": "Hanserwei",
+  "blog": "https://likeyy.love",
+  "feed": "https://likeyy.love/rss.xml",
+  "post_limit": 5,
+  "recent_limit": 4,
+  "featured": [
+    {
+      "repo": "han-menu",
+      "title": "Han Menu",
+      "category": "DOMAIN-DRIVEN DESIGN",
+      "description": ["从业务出发，重构外卖系统。", "模块化单体 / 订单幂等 / 支付与退款"],
+      "stack": "Java 25 · Spring Modulith · Vue 3",
+      "accent": "#b4f272",
+      "glyph": "01"
+    },
+    {
+      "repo": "hanserwei-springboot-ddd",
+      "title": "Spring Boot DDD",
+      "category": "BACKEND ARCHITECTURE",
+      "description": ["让领域模型成为工程的起点。", "DDD 分层 / 现代 Java / 可复用脚手架"],
+      "stack": "Java 25 · Spring Boot 4.1",
+      "accent": "#b6a0ff",
+      "glyph": "02"
+    },
+    {
+      "repo": "mysql-single-table-bench",
+      "title": "MySQL · 500M rows",
+      "category": "DATABASE EXPERIMENT / 01",
+      "description": ["单表五亿行，拿实测数据说话。", "可续跑造数 / 读写压测 / PostgreSQL 对照"],
+      "stack": "MySQL 9.7 · Python · Benchmark",
+      "accent": "#76d9ec",
+      "glyph": "03"
+    },
+    {
+      "repo": "pg-single-table-bench",
+      "title": "Postgres · 500M rows",
+      "category": "DATABASE EXPERIMENT / 02",
+      "description": ["把数据库边界变成可复现的实验。", "五亿行订单 / 实测报告 / 离线阅读"],
+      "stack": "PostgreSQL 18 · Python · Benchmark",
+      "accent": "#f3bd78",
+      "glyph": "04"
+    },
+    {
+      "repo": "podman-tui",
+      "title": "Podman TUI",
+      "category": "TOOLS FOR BUILDERS",
+      "description": ["在终端里，掌控容器的每个细节。", "Rootless / Pod / Quadlet / 多连接"],
+      "stack": "Rust · Ratatui · Podman",
+      "accent": "#f39ac7",
+      "glyph": "05"
+    },
+    {
+      "repo": "tailscale-home-services",
+      "title": "Homelab, connected.",
+      "category": "SELF-HOSTED INFRASTRUCTURE",
+      "description": ["让家里的服务，也有自己的秩序。", "统一域名 / 自动 HTTPS / 受限证书同步"],
+      "stack": "Tailscale · Nginx · Python",
+      "accent": "#b4f272",
+      "glyph": "06"
+    }
+  ],
+  "toolbox": [
+    {"name": "Java", "icon": "java", "url": "https://dev.java/"},
+    {"name": "PostgreSQL", "icon": "postgresql", "url": "https://www.postgresql.org/"},
+    {"name": "MySQL", "icon": "mysql", "url": "https://www.mysql.com/"},
+    {"name": "Redis", "icon": "redis", "url": "https://redis.io/"},
+    {"name": "Rust", "icon": "rust", "url": "https://www.rust-lang.org/"},
+    {"name": "Python", "icon": "python", "url": "https://www.python.org/"},
+    {"name": "Podman", "icon": "podman", "url": "https://podman.io/"},
+    {"name": "Git", "icon": "git", "url": "https://git-scm.com/"},
+    {"name": "Tailscale", "icon": "tailscale", "url": "https://tailscale.com/"},
+    {"name": "Proxmox", "icon": "proxmox", "url": "https://www.proxmox.com/"}
+  ]
+}

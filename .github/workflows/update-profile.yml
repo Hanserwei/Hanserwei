@@ -1,0 +1,100 @@
+name: Update profile
+
+on:
+  schedule:
+    # 09:23 Asia/Shanghai. GitHub schedules are best-effort, in UTC.
+    - cron: '23 1 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.profile/config.json'
+      - '.profile/README.template.md'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'assets/icons/**'
+      - '.github/workflows/update-profile.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.repository == 'Hanserwei/Hanserwei' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Check out profile
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+
+      - name: Test generator
+        run: python -m unittest discover -s tests -v
+
+      - name: Refresh projects and blog posts
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/update_profile.py
+
+      - name: Refresh contribution animation
+        id: snake
+        continue-on-error: true
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ github.token }}
+          # Generate in runner temp; replace the checked-in fallback only on success.
+          outputs: |
+            ${{ runner.temp }}/contributions.svg?color_snake=#b6a0ff&color_dots=#192330,#35533d,#608b47,#8ec95d,#b4f272
+
+      - name: Install successful animation
+        if: steps.snake.outcome == 'success'
+        env:
+          SNAKE_FILE: ${{ runner.temp }}/contributions.svg
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          source = Path(os.environ['SNAKE_FILE'])
+          data = source.read_bytes()
+          assert ET.fromstring(data).tag == '{http://www.w3.org/2000/svg}svg'
+          Path('assets/generated/contributions.svg').write_bytes(data)
+          PY
+
+      - name: Report animation fallback
+        if: steps.snake.outcome != 'success'
+        run: echo 'Contribution refresh failed; kept the checked-in animation.' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify generated profile
+        run: python scripts/update_profile.py --check
+
+      - name: Commit changed content
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add README.md .profile/cache.json assets/generated/
+          if git diff --cached --quiet; then
+            echo 'Profile is already up to date.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore(profile): refresh projects, articles and contributions'
+          # Authenticate only this step through gh's environment-backed helper.
+          gh auth setup-git --hostname github.com
+          # A concurrent human push causes a safe failure; never force-push.
+          git push origin HEAD:main
