@@ -5,7 +5,7 @@
     .body{font-family:Arial,PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif}
     .display{font-family:Georgia,Times New Roman,PingFang SC,Microsoft YaHei,Noto Sans CJK SC,serif}
   </style>
-  <rect width="720" height="392" rx="16" fill="#f5f4ed"/>
+  <rect width="720" height="392" rx="16" fill="#faf9f5"/>
   <text x="40" y="61" class="body" font-size="22" letter-spacing="1" fill="#5e5d59">Hanserwei / 个人主页</text>
   <g class="display" fill="#141413" font-weight="400">
     <text x="40" y="138" font-size="52">你好，我是</text>

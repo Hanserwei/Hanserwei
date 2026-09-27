@@ -5,11 +5,11 @@
     .body{font-family:Arial,PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif}
     .display{font-family:Georgia,Times New Roman,PingFang SC,Microsoft YaHei,Noto Sans CJK SC,serif}
   </style>
-  <rect width="1200" height="376" rx="16" fill="#f5f4ed"/>
+  <rect width="1200" height="376" rx="16" fill="#faf9f5"/>
   <text x="60" y="73" class="body" font-size="16" letter-spacing="1" fill="#5e5d59">Hanserwei / 个人主页</text>
   <text x="60" y="175" class="display" font-size="64" font-weight="400" fill="#141413">你好，我是 Hanserwei。</text>
   <text x="60" y="242" class="body" font-size="22" fill="#5e5d59">记录美好生活，也记录技术探索。</text>
-  <text x="1138" y="215" text-anchor="end" class="display" font-size="230" fill="#c96442" aria-hidden="true">”</text>
+  <text x="1138" y="215" text-anchor="end" class="display" font-size="230" fill="#c6613f" aria-hidden="true">”</text>
   <path d="M60 294H1140" stroke="#e8e6dc"/>
   <g class="body" font-size="16" fill="#5e5d59">
     <text x="60" y="338">代码 · 文字 · 日常</text>

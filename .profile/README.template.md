@@ -15,7 +15,33 @@
 
 ## 关于这里
 
-我是 **Hanserwei**。<br />这里连接我的代码与文字。在 [Hanserwei 的博客](https://likeyy.love)，我记录技术探索，也记录美好生活。最近的文章围绕网络技术、领域建模，以及用 Spring Modulith 重构外卖系统展开。
+我是 **Hanserwei**，在成都写后端，也折腾开源工具和自己的 Homelab。主要使用 **Java / Spring** 构建服务，用 **Rust** 打磨工具，用 **Python** 做实验。最近在探索 DDD、数据库性能，以及 AI Agent 的上下文与工程实践。
+
+喜欢把「应该可以」变成可运行的代码、可复现的实验、可以读懂的笔记。这里是我的工作台，[博客](https://likeyy.love)记录技术探索，也记录美好生活。
+
+<p align="center">
+  <picture>
+    <source media="(max-width: 600px)" srcset="assets/generated/pulse-mobile.svg" />
+    <img src="assets/generated/pulse.svg" width="100%" alt="{{STATS_ALT}}" />
+  </picture>
+</p>
+
+## 精选项目
+
+从业务系统到终端工具，从数据库深处到家里的服务器。
+
+{{PROJECT_CARDS}}
+
+<details>
+<summary>查看项目文字索引</summary>
+
+{{PROJECT_INDEX}}
+
+</details>
+
+## 最近在写
+
+{{RECENT_PROJECTS}}
 
 ## 最近写下的
 
@@ -25,16 +51,33 @@
 
 [阅读全部文章 →](https://likeyy.love)
 
+## 常用工具
+
+{{TOOLBOX}}
+
+<p align="center">
+  <sub>Java / Spring · 数据库与缓存 · Rust / Python · 容器与 Homelab</sub>
+</p>
+
+## 一点一滴
+
+<p align="center">
+  <img src="assets/generated/contributions.svg" width="100%" alt="GitHub 贡献记录的贪吃蛇动画，每天自动更新" />
+</p>
+
+<p align="center">在代码与生活之间，保持好奇。</p>
+
 ---
 
 ### 不错过下一篇
 
 把 RSS 加入你喜欢的阅读器，让新文章自己来找你。
 
-[获取 RSS 订阅链接 ↗](https://likeyy.love/rss.xml)
-
-<br />
+[获取 RSS 订阅链接 ↗](https://likeyy.love/rss.xml) &nbsp; · &nbsp; [联系我](mailto:hanserwei@qq.com)
 
 <sub>慢慢探索，认真记录。</sub>
 
-<!-- 文章内容更新于 {{UPDATED_AT}}；维护说明见 docs/PROFILE.md。 -->
+<p>
+  <sub>项目与文章内容更新于 {{UPDATED_AT}} · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
+  图标来自 <a href="https://dashboardicons.com/">Dashboard Icons</a> · <a href="assets/icons/NOTICE.md">图标授权</a> · <a href="docs/PROFILE.md">关于这个主页</a></sub>
+</p>

@@ -1,5 +1,6 @@
 """Regression tests for untrusted feed data and unattended profile updates."""
 
+import copy
 import json
 import tempfile
 import unittest
@@ -21,9 +22,22 @@ RSS = b"""<rss version="2.0"><channel>
 </channel></rss>"""
 
 
+def repository(name="demo", **extra):
+    return {
+        "name": name, "description": "A public project", "language": "Python",
+        "stargazers_count": 2, "pushed_at": "2026-09-22T08:00:00Z",
+        "fork": False, "private": False, "archived": False, "disabled": False,
+        **extra,
+    }
+
+
 def snapshot():
     return {
         "updated_at": "2026-09-23 09:23 CST (UTC+8)",
+        "github": {"public_repos": 22, "repos": [{
+            "name": "demo", "description": "Pipe | [link](javascript:alert(1)) <img>",
+            "language": "Python", "stars": 2, "pushed_at": "2026-09-22T08:00:00Z",
+        }]},
         "posts": profile.parse_feed(RSS, "https://likeyy.love", 5),
     }
 
@@ -60,64 +74,86 @@ class FeedTests(unittest.TestCase):
             self.assertIsNone(profile.public_url(url, "likeyy.love"))
 
 
-class FetchTests(unittest.TestCase):
-    def test_malformed_json_is_reported(self):
+class GitHubTests(unittest.TestCase):
+    def test_only_active_original_public_projects_are_selected(self):
+        repos = [repository("older", pushed_at="2026-09-20T08:00:00Z"), repository("newer"),
+                 repository("fork", fork=True), repository("secret", private=True),
+                 repository("archived", archived=True), repository("disabled", disabled=True),
+                 repository("Hanserwei")]
+        with patch.object(profile, "fetch", side_effect=[json.dumps({"public_repos": 22}).encode(), json.dumps(repos).encode()]):
+            result = profile.github_snapshot("Hanserwei")
+        self.assertEqual([repo["name"] for repo in result["repos"]], ["newer", "older"])
+        self.assertEqual(result["public_repos"], 22)
+
+    def test_pagination_reads_beyond_first_hundred_repositories(self):
+        first = [repository(f"fork-{i}", fork=True) for i in range(100)]
+        with patch.object(profile, "fetch", side_effect=[json.dumps({"public_repos": 101}).encode(), json.dumps(first).encode(), json.dumps([repository()]).encode()]) as fetch:
+            result = profile.github_snapshot("Hanserwei")
+        self.assertEqual(len(result["repos"]), 1)
+        self.assertIn("page=2", fetch.call_args.args[0])
+
+    def test_bad_counts_and_malformed_json_are_reported(self):
+        for value in [-1, True, "22", None]:
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                profile.count(value)
         with self.assertRaisesRegex(ValueError, "Invalid JSON"):
             profile.parse_json("not json", "test")
 
     def test_fetch_rejects_non_source_urls_before_network_access(self):
-        for url in ["file:///etc/passwd", "https://evil.example/rss.xml", "https://api.github.com/users/Hanserwei"]:
-            with self.subTest(url=url), self.assertRaises(ValueError):
+        for url in ["file:///etc/passwd", "https://evil.example/rss.xml"]:
+            with self.assertRaises(ValueError):
                 profile.fetch(url)
 
 
 class RecoveryTests(unittest.TestCase):
     def setUp(self):
-        self.config = {"blog": "https://likeyy.love", "feed": "https://likeyy.love/rss.xml", "post_limit": 5}
+        self.config = {"username": "Hanserwei", "blog": "https://likeyy.love", "feed": "https://likeyy.love/rss.xml", "post_limit": 5}
         self.previous = snapshot()
 
-    def test_new_articles_update_snapshot_without_mutating_previous(self):
-        feed = RSS.replace(b"Old post", b"Updated post")
-        with patch.object(profile, "fetch", return_value=feed):
+    def test_blog_failure_preserves_posts_but_github_can_update(self):
+        fresh = copy.deepcopy(self.previous["github"])
+        fresh["public_repos"] = 23
+        with patch.object(profile, "github_snapshot", return_value=fresh), patch.object(profile, "fetch", side_effect=URLError("offline")):
             result, warnings = profile.refresh(self.config, self.previous, "new time")
-        self.assertEqual(result["posts"][1]["title"], "Updated post")
+        self.assertEqual(result["posts"], self.previous["posts"])
+        self.assertEqual(result["github"]["public_repos"], 23)
         self.assertEqual(result["updated_at"], "new time")
-        self.assertEqual(self.previous["posts"][1]["title"], "Old post")
-        self.assertEqual(warnings, [])
+        self.assertEqual(len(warnings), 1)
+        self.assertEqual(self.previous["github"]["public_repos"], 22)
 
-    def test_outage_keeps_posts_and_timestamp_identical(self):
-        with patch.object(profile, "fetch", side_effect=URLError("offline")):
+    def test_total_outage_keeps_snapshot_and_timestamp_identical(self):
+        with patch.object(profile, "github_snapshot", side_effect=URLError("offline")), patch.object(profile, "fetch", side_effect=URLError("offline")):
             result, warnings = profile.refresh(self.config, self.previous, "new time")
         self.assertEqual(result, self.previous)
-        self.assertEqual(len(warnings), 1)
+        self.assertEqual(len(warnings), 2)
 
     def test_successful_unchanged_refresh_does_not_create_daily_churn(self):
-        with patch.object(profile, "fetch", return_value=RSS):
+        with patch.object(profile, "github_snapshot", return_value=self.previous["github"]), patch.object(profile, "fetch", return_value=RSS):
             result, warnings = profile.refresh(self.config, self.previous, "new time")
         self.assertEqual(result, self.previous)
         self.assertEqual(warnings, [])
 
     def test_first_run_without_any_cache_fails_closed(self):
-        with patch.object(profile, "fetch", side_effect=URLError("offline")), self.assertRaises(RuntimeError):
+        with patch.object(profile, "github_snapshot", side_effect=URLError("offline")), self.assertRaises(RuntimeError):
             profile.refresh(self.config, {}, "new time")
 
 
 class RenderTests(unittest.TestCase):
     def test_render_is_deterministic_and_external_text_cannot_inject_markup(self):
         config = json.loads((profile.ROOT / ".profile/config.json").read_text(encoding="utf-8"))
-        data = snapshot()
-        data["posts"][1]["title"] = 'Title </a><img src=x onerror="alert(1)">'
-        result = profile.render(profile.ROOT, config, data)
-        self.assertEqual(result, profile.render(profile.ROOT, config, data))
+        result = profile.render(profile.ROOT, config, snapshot())
+        self.assertEqual(result, profile.render(profile.ROOT, config, snapshot()))
         readme = result["README.md"]
         self.assertIn("2026-09-23</sub>", readme)  # UTC+8 blog date
         self.assertIn("a=1&amp;b=2", readme)
         self.assertIn("{{TOOLBOX}}", readme)  # Feed content isn't template code.
-        self.assertIn("Title &lt;/a&gt;&lt;img src=x onerror=&quot;alert(1)&quot;&gt;", readme)
+        self.assertIn("Pipe | [link](javascript:alert(1)) &lt;img&gt;", readme)
         self.assertNotIn("<img>", readme)
-        config["post_limit"] = 1
-        limited = profile.render(profile.ROOT, config, data)["README.md"]
-        self.assertNotIn("Title &lt;/a&gt;", limited)
+        for name, content in result.items():
+            if name.endswith(".svg"):
+                # Only our generated SVG and checked-in icons enter this assertion.
+                element = ET.fromstring(content)  # noqa: S314 — trusted local output
+                self.assertEqual(element.tag, "{http://www.w3.org/2000/svg}svg")
 
     def test_noop_write_preserves_file_mtime(self):
         with tempfile.TemporaryDirectory() as directory:

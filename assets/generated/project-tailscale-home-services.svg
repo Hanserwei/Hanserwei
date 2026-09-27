@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="586" height="286" viewBox="0 0 586 286" role="img" aria-labelledby="title">
+<title id="title">Homelab, connected. — 让家里的服务，也有自己的秩序。 统一域名 / 自动 HTTPS / 受限证书同步</title>
+<g transform="translate(8 8)">
+<rect x="1" y="1" width="568" height="268" rx="16" fill="#e3dacc" stroke="#d8d2c4"/>
+<text x="28" y="36" fill="#8b4129" font-family="Arial, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="17">自托管基础设施</text>
+<text x="541" y="37" text-anchor="end" fill="#5e5d59" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="17">06</text>
+<text x="27" y="84" fill="#141413" font-family="Georgia, Times New Roman, Noto Serif CJK SC, serif" font-size="34" font-weight="400">Homelab, connected.</text>
+<text x="28" y="126" fill="#3d3d3a" font-family="Arial, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="22">让家里的服务，也有自己的秩序。</text>
+<text x="28" y="158" fill="#5e5d59" font-family="Arial, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19">统一域名 / 自动 HTTPS / 受限证书同步</text>
+<text x="28" y="195" fill="#3d3d3a" font-family="Arial, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19">Tailscale · Nginx · Python</text>
+<path d="M28 215H542" stroke="#cfc5b5"/>
+<text x="28" y="244" fill="#5e5d59" font-family="Arial, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="18">★ 0   /   Python   /   2026-09-17</text>
+<text x="540" y="244" text-anchor="end" fill="#141413" font-family="Arial, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24">↗</text>
+</g>
+</svg>

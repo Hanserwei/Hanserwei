@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a GitHub profile from the blog's public RSS feed.
+"""Build a GitHub profile from public GitHub data and the blog's RSS feed.
 
 Python 3.11+; standard library only. Network failures retain the last good source.
 Use --offline to render the committed snapshot, or --check to verify that render.
@@ -26,6 +26,15 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 MAX_BYTES = 4 * 1024 * 1024
+FONT = "Arial, PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif"
+SERIF = "Georgia, Times New Roman, Noto Serif CJK SC, serif"
+PAPER = "#faf9f5"
+SAND = "#e3dacc"
+INK = "#141413"
+MUTED = "#5e5d59"
+BORDER = "#d8d2c4"
+ACCENT = "#c6613f"
+MONO = "ui-monospace, SFMono-Regular, Consolas, monospace"
 
 
 def escape(value: object) -> str:
@@ -50,16 +59,20 @@ def public_url(value: str, host: str) -> str | None:
 
 def fetch(url: str) -> bytes:
     parsed = urlparse(url)
-    if parsed.scheme != "https" or parsed.netloc != "likeyy.love":
-        raise ValueError("Only the public HTTPS blog feed is allowed")
+    if parsed.scheme != "https" or parsed.netloc not in {"api.github.com", "likeyy.love"}:
+        raise ValueError("Only the public GitHub API and the HTTPS blog feed are allowed")
     headers = {"User-Agent": "Hanserwei-profile/1.0 (+https://github.com/Hanserwei/Hanserwei)"}
+    if parsed.netloc == "api.github.com":
+        headers.update({"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"})
+        if token := os.environ.get("GITHUB_TOKEN"):
+            headers.update({"Authorization": f"Bearer {token}"})
     for attempt in range(3):
         connection = HTTPSConnection(parsed.netloc, timeout=20)
         try:
             path = parsed.path or "/"
             if parsed.query:
                 path += "?" + parsed.query
-            # No redirect following: requests stay on the configured blog host.
+            # No redirect following: credentials can never leave the API host.
             connection.request("GET", path, headers=headers)
             response = connection.getresponse()
             if response.status != 200:
@@ -92,6 +105,45 @@ def read_json(path: Path):
         return parse_json(path.read_text(encoding="utf-8"), str(path))
     except OSError as error:
         raise RuntimeError(f"Cannot read {path}: {error}") from error
+
+
+def count(value: object) -> int:
+    if not isinstance(value, int) or isinstance(value, bool) or value < 0:
+        raise ValueError("GitHub counts must be non-negative integers")
+    return value
+
+
+def github_snapshot(username: str) -> dict:
+    user = parse_json(fetch(f"https://api.github.com/users/{username}"), "GitHub user")
+    repos = []
+    for page in range(1, 101):
+        batch = parse_json(fetch(
+            f"https://api.github.com/users/{username}/repos?type=owner&sort=pushed&per_page=100&page={page}"
+        ), "GitHub repositories")
+        if not isinstance(batch, list):
+            raise ValueError("GitHub repositories response is not a list")
+        for repo in batch:
+            if repo.get("fork") or repo.get("private") or repo.get("archived") or repo.get("disabled"):
+                continue
+            if repo["name"].casefold() == username.casefold():
+                continue
+            if not re.fullmatch(r"[A-Za-z0-9_.-]+", repo["name"]):
+                continue
+            repos.append({
+                "name": repo["name"],
+                "description": clean_text(repo.get("description") or "持续构建与探索中。"),
+                "language": repo.get("language") or "Code",
+                "stars": count(repo["stargazers_count"]),
+                "pushed_at": repo["pushed_at"],
+            })
+        if len(batch) < 100:
+            break
+    else:
+        raise ValueError("GitHub pagination exceeded 100 pages")
+    if not repos:
+        raise ValueError("GitHub returned no eligible public projects")
+    repos.sort(key=lambda repo: (repo["pushed_at"], repo["name"]), reverse=True)
+    return {"public_repos": count(user["public_repos"]), "repos": repos}
 
 
 def parse_feed(data: bytes, blog: str, limit: int) -> list[dict]:
@@ -140,6 +192,7 @@ def refresh(config: dict, previous: dict, now: str) -> tuple[dict, list[str]]:
     snapshot = copy.deepcopy(previous)
     warnings = []
     sources = {
+        "github": lambda: github_snapshot(config["username"]),
         "posts": lambda: parse_feed(fetch(config["feed"]), config["blog"], config["post_limit"]),
     }
     for name, load in sources.items():
@@ -155,19 +208,115 @@ def refresh(config: dict, previous: dict, now: str) -> tuple[dict, list[str]]:
     return snapshot, warnings
 
 
+def svg_document(width: int, height: int, title: str, body: str, background: str = PAPER, padding: int = 0) -> str:
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width + padding * 2}" height="{height + padding * 2}" '
+        f'viewBox="0 0 {width + padding * 2} {height + padding * 2}" role="img" aria-labelledby="title">\n'
+        f'<title id="title">{escape(title)}</title>\n'
+        f'<g transform="translate({padding} {padding})">\n'
+        f'<rect x="1" y="1" width="{width - 2}" height="{height - 2}" rx="16" fill="{background}" stroke="{BORDER}"/>\n'
+        f'{body}\n</g>\n</svg>\n'
+    )
+
+
+def project_card(project: dict, repo: dict | None) -> str:
+    detail = f'★ {repo["stars"]}   /   {repo["language"]}   /   {repo["pushed_at"][:10]}' if repo else "查看项目仓库"
+    body = f'''<text x="28" y="36" fill="#8b4129" font-family="{FONT}" font-size="17">{escape(project['category'])}</text>
+<text x="541" y="37" text-anchor="end" fill="{MUTED}" font-family="{MONO}" font-size="17">{escape(project['glyph'])}</text>
+<text x="27" y="84" fill="{INK}" font-family="{SERIF}" font-size="34" font-weight="400">{escape(project['title'])}</text>
+<text x="28" y="126" fill="#3d3d3a" font-family="{FONT}" font-size="22">{escape(project['description'][0])}</text>
+<text x="28" y="158" fill="{MUTED}" font-family="{FONT}" font-size="19">{escape(project['description'][1])}</text>
+<text x="28" y="195" fill="#3d3d3a" font-family="{FONT}" font-size="19">{escape(project['stack'])}</text>
+<path d="M28 215H542" stroke="#cfc5b5"/>
+<text x="28" y="244" fill="{MUTED}" font-family="{FONT}" font-size="18">{escape(detail)}</text>
+<text x="540" y="244" text-anchor="end" fill="{INK}" font-family="{FONT}" font-size="24">↗</text>'''
+    return svg_document(570, 270, f"{project['title']} — {' '.join(project['description'])}", body, SAND, padding=8)
+
+
+def stats_card(config: dict, snapshot: dict, mobile: bool = False) -> tuple[str, str]:
+    repos = snapshot["github"]["repos"]
+    recent = max(repo["pushed_at"] for repo in repos)[:10]
+    items = [(str(snapshot["github"]["public_repos"]), "公开仓库"),
+             (str(len(config["featured"])), "精选项目"),
+             ("likeyy.love", "代码之外的文字"),
+             (recent, "最近代码推送")]
+    body = []
+    for index, (value, label) in enumerate(items):
+        x = 30 + (index % 2 if mobile else index) * 285
+        y = index // 2 * 100 if mobile else 0
+        if index and not mobile:
+            body.append(f'<path d="M{x - 16} 26V92" stroke="{BORDER}"/>')
+        body.append(f'<text x="{x}" y="{54 + y}" fill="{INK}" font-family="{SERIF}" font-size="32">{escape(value)}</text>')
+        body.append(f'<text x="{x}" y="{83 + y}" fill="{MUTED}" font-family="{FONT}" font-size="16">{label}</text>')
+    alt = f'{snapshot["github"]["public_repos"]} 个公开仓库 · {len(config["featured"])} 个精选项目 · 博客 likeyy.love · 最近代码推送 {recent}'
+    return svg_document(600 if mobile else 1160, 214 if mobile else 112, alt, "\n".join(body)), alt
+
+
+def icon_chip(root: Path, tool: dict) -> str:
+    # Checked-in SVG assets from a pinned upstream revision, never network input.
+    source = ET.fromstring((root / "assets/icons" / f'{tool["icon"]}.svg').read_bytes())  # noqa: S314
+    source.set("x", "23")
+    source.set("y", "17")
+    source.set("width", "42")
+    source.set("height", "42")
+    ET.register_namespace("", "http://www.w3.org/2000/svg")
+    body = (
+        '<!-- Dashboard Icons: Apache-2.0; see ../icons/LICENSE and NOTICE.md. '
+        'Modified presentation: added backing, label and positioning. -->\n'
+        '<rect x="13" y="7" width="62" height="62" rx="16" fill="#f0eee6"/>'
+        + ET.tostring(source, encoding="unicode")
+        + f'<text x="44" y="92" text-anchor="middle" fill="{MUTED}" font-family="{FONT}" font-size="12">{escape(tool["name"])}</text>'
+    )
+    return svg_document(88, 108, tool["name"], body)
+
+
 def render(root: Path, config: dict, snapshot: dict) -> dict[str, str]:
+    outputs = {}
+    username = config["username"]
+    repos = snapshot["github"]["repos"]
+    by_name = {repo["name"]: repo for repo in repos}
+    cards, index = [], []
+    for project in config["featured"]:
+        name = project["repo"]
+        target = f"https://github.com/{username}/{name}"
+        asset = f"assets/generated/project-{name}.svg"
+        outputs[asset] = project_card(project, by_name.get(name))
+        alt = f'{project["title"]} — {project["description"][0]} {project["stack"]}'
+        cards.append(f'<a href="{target}"><img src="{asset}" width="400" alt="{escape(alt)}" /></a>')
+        index.append(f'- **[{project["title"]}]({target})** — {" ".join(project["description"])} `{project["stack"]}`')
+    recent = []
+    for repo in repos[:config["recent_limit"]]:
+        name = repo["name"]
+        recent.append(
+            f'<p><a href="https://github.com/{username}/{name}"><strong>{escape(name)} ↗</strong></a>'
+            f' &nbsp; <sub>{escape(repo["language"])} · {escape(repo["pushed_at"][:10])}</sub>'
+            f'<br />{escape(repo["description"])}</p>'
+        )
     posts = []
     for post in snapshot["posts"][:config["post_limit"]]:
         date = datetime.fromisoformat(post["published"]).astimezone(ZoneInfo("Asia/Shanghai")).strftime("%Y-%m-%d")
         posts.append(f'<p><sub>{date}</sub><br /><a href="{escape(post["url"])}">{escape(post["title"])} ↗</a></p>')
+    tools = []
+    for tool in config["toolbox"]:
+        asset = f'assets/generated/tool-{tool["icon"]}.svg'
+        outputs[asset] = icon_chip(root, tool)
+        tools.append(f'<a href="{escape(tool["url"])}"><img src="{asset}" width="76" height="93" alt="{escape(tool["name"])}" /></a>')
+    pulse, stats_alt = stats_card(config, snapshot)
+    outputs["assets/generated/pulse.svg"] = pulse
+    outputs["assets/generated/pulse-mobile.svg"] = stats_card(config, snapshot, mobile=True)[0]
     replacements = {
+        "STATS_ALT": escape(stats_alt),
+        "PROJECT_CARDS": '<p align="center">\n' + "\n".join(cards) + "\n</p>",
+        "PROJECT_INDEX": "\n".join(index),
+        "RECENT_PROJECTS": "\n\n".join(recent),
         "BLOG_POSTS": "\n\n".join(posts),
+        "TOOLBOX": '<p align="center">\n' + "\n".join(tools) + "\n</p>",
         "UPDATED_AT": snapshot["updated_at"],
     }
     template = (root / ".profile/README.template.md").read_text(encoding="utf-8")
     # Substitute only template tokens, never content from API responses.
-    readme = re.sub(r"\{\{([A-Z_]+)\}\}", lambda match: replacements[match[1]], template)
-    return {"README.md": readme}
+    outputs["README.md"] = re.sub(r"\{\{([A-Z_]+)\}\}", lambda match: replacements[match[1]], template)
+    return outputs
 
 
 def write_changed(path: Path, content: str) -> bool:
