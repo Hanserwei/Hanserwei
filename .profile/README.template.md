@@ -3,89 +3,38 @@
 <p align="center">
   <a href="https://likeyy.love"><picture>
     <source media="(max-width: 600px)" srcset="assets/hero-mobile.svg" />
-    <img src="assets/hero.svg" width="100%" alt="Hanser Wei · 用代码构建，用实验求证，用文字记录。成都 / Java / Rust / AI Agents / Homelab" />
+    <img src="assets/hero.svg" width="100%" alt="你好，我是 Hanserwei。记录美好生活，也记录技术探索。代码 · 文字 · 日常。" />
   </picture></a>
 </p>
 
 <p align="center">
-  <a href="https://likeyy.love"><strong>寒森博客 ↗</strong></a> &nbsp; / &nbsp;
-  <a href="https://github.com/Hanserwei?tab=repositories"><strong>全部项目</strong></a> &nbsp; / &nbsp;
-  <a href="mailto:hanserwei@qq.com"><strong>联系我</strong></a> &nbsp; / &nbsp;
-  <a href="https://likeyy.love/rss.xml"><strong>订阅 RSS</strong></a>
+  <a href="https://likeyy.love" title="Hanserwei 的博客">博客 ↗</a> &nbsp; · &nbsp;
+  <a href="https://likeyy.love/rss.xml">订阅 RSS ↗</a> &nbsp; · &nbsp;
+  <a href="https://github.com/Hanserwei?tab=repositories">我的仓库 ↗</a>
 </p>
 
-<br />
+## 关于这里
 
-### 你好，我是寒森。 <sub>BUILD · MEASURE · LEARN</sub>
+我是 **Hanserwei**。<br />这里连接我的代码与文字。在 [Hanserwei 的博客](https://likeyy.love)，我记录技术探索，也记录美好生活。最近的文章围绕网络技术、领域建模，以及用 Spring Modulith 重构外卖系统展开。
 
-在成都写后端，也折腾开源工具和自己的 Homelab。主要使用 **Java / Spring** 构建服务，用 **Rust** 打磨工具，用 **Python** 做实验。最近在探索 DDD、数据库性能，以及 AI Agent 的上下文与工程实践。
+## 最近写下的
 
-喜欢把「应该可以」变成**可运行的代码、可复现的实验、可以读懂的笔记**。这里是我的工作台，博客是它的另一面。
-
-<p align="center">
-  <picture>
-    <source media="(max-width: 600px)" srcset="assets/generated/pulse-mobile.svg" />
-    <img src="assets/generated/pulse.svg" width="100%" alt="{{STATS_ALT}}" />
-  </picture>
-</p>
-
-<br />
-
-### 01 / 精选作品 <sub>SELECTED BUILDS</sub>
-
-从业务系统到终端工具，从数据库深处到家里的服务器。
-
-{{PROJECT_CARDS}}
-
-<details>
-<summary>查看项目文字索引</summary>
-
-{{PROJECT_INDEX}}
-
-</details>
-
-<br />
-
-### 02 / 最近在写 <sub>ON THE WORKBENCH</sub>
-
-{{RECENT_PROJECTS}}
-
-<br />
-
-### 03 / 代码之外，写下来 <sub>NOTES FROM THE LAB</sub>
-
-在 **[寒森博客 · likeyy.love](https://likeyy.love)** 记录工程实践、踩坑过程和生活。下面是最近发布的文章：
+<sub>来自 Hanserwei 的博客 · RSS</sub>
 
 {{BLOG_POSTS}}
 
-**[去博客继续阅读 ↗](https://likeyy.love)** &nbsp; · &nbsp; [RSS 订阅](https://likeyy.love/rss.xml)
-
-<br />
-
-### 04 / 常用装备 <sub>MY TOOLBOX</sub>
-
-{{TOOLBOX}}
-
-<p align="center">
-  <sub>Java / Spring · SQL / Cache · Rust / Python · Containers / Homelab</sub>
-</p>
-
-<br />
-
-### 05 / 一点一滴 <sub>THE COMMIT TRAIL</sub>
-
-<p align="center">
-  <img src="assets/generated/contributions.svg" width="100%" alt="GitHub 贡献记录的贪吃蛇动画，每天自动更新" />
-</p>
-
-<p align="center">
-  <strong>Keep building. Stay curious.</strong><br />
-  <sub>在代码与生活之间，保持好奇。</sub>
-</p>
+[阅读全部文章 →](https://likeyy.love)
 
 ---
 
-<p align="center">
-  <sub>项目与文章内容更新于 {{UPDATED_AT}} · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
-  Icons from <a href="https://dashboardicons.com/">Dashboard Icons</a> · <a href="docs/PROFILE.md">关于这个主页</a></sub>
-</p>
+### 不错过下一篇
+
+把 RSS 加入你喜欢的阅读器，让新文章自己来找你。
+
+[获取 RSS 订阅链接 ↗](https://likeyy.love/rss.xml)
+
+<br />
+
+<sub>慢慢探索，认真记录。</sub>
+
+<!-- 文章内容更新于 {{UPDATED_AT}}；维护说明见 docs/PROFILE.md。 -->

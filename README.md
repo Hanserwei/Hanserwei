@@ -3,126 +3,46 @@
 <p align="center">
   <a href="https://likeyy.love"><picture>
     <source media="(max-width: 600px)" srcset="assets/hero-mobile.svg" />
-    <img src="assets/hero.svg" width="100%" alt="Hanser Wei · 用代码构建，用实验求证，用文字记录。成都 / Java / Rust / AI Agents / Homelab" />
+    <img src="assets/hero.svg" width="100%" alt="你好，我是 Hanserwei。记录美好生活，也记录技术探索。代码 · 文字 · 日常。" />
   </picture></a>
 </p>
 
 <p align="center">
-  <a href="https://likeyy.love"><strong>寒森博客 ↗</strong></a> &nbsp; / &nbsp;
-  <a href="https://github.com/Hanserwei?tab=repositories"><strong>全部项目</strong></a> &nbsp; / &nbsp;
-  <a href="mailto:hanserwei@qq.com"><strong>联系我</strong></a> &nbsp; / &nbsp;
-  <a href="https://likeyy.love/rss.xml"><strong>订阅 RSS</strong></a>
+  <a href="https://likeyy.love" title="Hanserwei 的博客">博客 ↗</a> &nbsp; · &nbsp;
+  <a href="https://likeyy.love/rss.xml">订阅 RSS ↗</a> &nbsp; · &nbsp;
+  <a href="https://github.com/Hanserwei?tab=repositories">我的仓库 ↗</a>
 </p>
 
-<br />
+## 关于这里
 
-### 你好，我是寒森。 <sub>BUILD · MEASURE · LEARN</sub>
+我是 **Hanserwei**。<br />这里连接我的代码与文字。在 [Hanserwei 的博客](https://likeyy.love)，我记录技术探索，也记录美好生活。最近的文章围绕网络技术、领域建模，以及用 Spring Modulith 重构外卖系统展开。
 
-在成都写后端，也折腾开源工具和自己的 Homelab。主要使用 **Java / Spring** 构建服务，用 **Rust** 打磨工具，用 **Python** 做实验。最近在探索 DDD、数据库性能，以及 AI Agent 的上下文与工程实践。
+## 最近写下的
 
-喜欢把「应该可以」变成**可运行的代码、可复现的实验、可以读懂的笔记**。这里是我的工作台，博客是它的另一面。
+<sub>来自 Hanserwei 的博客 · RSS</sub>
 
-<p align="center">
-  <picture>
-    <source media="(max-width: 600px)" srcset="assets/generated/pulse-mobile.svg" />
-    <img src="assets/generated/pulse.svg" width="100%" alt="22 个公开仓库 · 6 个精选项目 · 博客 likeyy.love · 最近代码推送 2026-09-24" />
-  </picture>
-</p>
+<p><sub>2026-09-27</sub><br /><a href="https://likeyy.love/archives/internet-censorship-circumvention">翻墙技术详解：从代理与 VPN 到现代抗封锁网络 ↗</a></p>
 
-<br />
+<p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-01-ddd-modulith">从零重构外卖系统（一）：先理解业务，再用 Spring Modulith 搭建 DDD 骨架 ↗</a></p>
 
-### 01 / 精选作品 <sub>SELECTED BUILDS</sub>
+<p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-02-employee-identity">从零重构外卖系统（二）：把员工账号规则落地为领域模型、JPA 和 REST API ↗</a></p>
 
-从业务系统到终端工具，从数据库深处到家里的服务器。
+<p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-03-catalog-consistency">从零重构外卖系统（三）：商品、套餐与营业状态，怎样从 CRUD 走向业务建模 ↗</a></p>
 
-<p align="center">
-<a href="https://github.com/Hanserwei/han-menu"><img src="assets/generated/project-han-menu.svg" width="420" alt="Han Menu — 从业务出发，重构外卖系统。 Java 25 · Spring Modulith · Vue 3" /></a>
-<a href="https://github.com/Hanserwei/hanserwei-springboot-ddd"><img src="assets/generated/project-hanserwei-springboot-ddd.svg" width="420" alt="Spring Boot DDD — 让领域模型成为工程的起点。 Java 25 · Spring Boot 4.1" /></a>
-<a href="https://github.com/Hanserwei/mysql-single-table-bench"><img src="assets/generated/project-mysql-single-table-bench.svg" width="420" alt="MySQL · 500M rows — 单表五亿行，拿实测数据说话。 MySQL 9.7 · Python · Benchmark" /></a>
-<a href="https://github.com/Hanserwei/pg-single-table-bench"><img src="assets/generated/project-pg-single-table-bench.svg" width="420" alt="Postgres · 500M rows — 把数据库边界变成可复现的实验。 PostgreSQL 18 · Python · Benchmark" /></a>
-<a href="https://github.com/Hanserwei/podman-tui"><img src="assets/generated/project-podman-tui.svg" width="420" alt="Podman TUI — 在终端里，掌控容器的每个细节。 Rust · Ratatui · Podman" /></a>
-<a href="https://github.com/Hanserwei/tailscale-home-services"><img src="assets/generated/project-tailscale-home-services.svg" width="420" alt="Homelab, connected. — 让家里的服务，也有自己的秩序。 Tailscale · Nginx · Python" /></a>
-</p>
+<p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-04-customer-cart">从零重构外卖系统（四）：顾客身份、默认地址与购物车，怎样设计归属和一致性 ↗</a></p>
 
-<details>
-<summary>查看项目文字索引</summary>
-
-- **[Han Menu](https://github.com/Hanserwei/han-menu)** — 从业务出发，重构外卖系统。 模块化单体 / 订单幂等 / 支付与退款 `Java 25 · Spring Modulith · Vue 3`
-- **[Spring Boot DDD](https://github.com/Hanserwei/hanserwei-springboot-ddd)** — 让领域模型成为工程的起点。 DDD 分层 / 现代 Java / 可复用脚手架 `Java 25 · Spring Boot 4.1`
-- **[MySQL · 500M rows](https://github.com/Hanserwei/mysql-single-table-bench)** — 单表五亿行，拿实测数据说话。 可续跑造数 / 读写压测 / PostgreSQL 对照 `MySQL 9.7 · Python · Benchmark`
-- **[Postgres · 500M rows](https://github.com/Hanserwei/pg-single-table-bench)** — 把数据库边界变成可复现的实验。 五亿行订单 / 实测报告 / 离线阅读 `PostgreSQL 18 · Python · Benchmark`
-- **[Podman TUI](https://github.com/Hanserwei/podman-tui)** — 在终端里，掌控容器的每个细节。 Rootless / Pod / Quadlet / 多连接 `Rust · Ratatui · Podman`
-- **[Homelab, connected.](https://github.com/Hanserwei/tailscale-home-services)** — 让家里的服务，也有自己的秩序。 统一域名 / 自动 HTTPS / 受限证书同步 `Tailscale · Nginx · Python`
-
-</details>
-
-<br />
-
-### 02 / 最近在写 <sub>ON THE WORKBENCH</sub>
-
-<p><a href="https://github.com/Hanserwei/hanlo-theme"><strong>hanlo-theme ↗</strong></a> &nbsp; <sub>HTML · 2026-09-24</sub><br />halo-theme-hao 独立维护版本</p>
-
-<p><a href="https://github.com/Hanserwei/han-menu"><strong>han-menu ↗</strong></a> &nbsp; <sub>Java · 2026-09-22</sub><br />外卖业务 DDD 模块化单体：Java 25 / Spring Boot 后端与 Vue 3 管理端，支持 Podman 本机部署。</p>
-
-<p><a href="https://github.com/Hanserwei/hanserwei-springboot-ddd"><strong>hanserwei-springboot-ddd ↗</strong></a> &nbsp; <sub>Java · 2026-09-21</sub><br />Spring Boot 4.1 and JDK 25 DDD scaffold</p>
-
-<p><a href="https://github.com/Hanserwei/tailscale-home-services"><strong>tailscale-home-services ↗</strong></a> &nbsp; <sub>Python · 2026-09-17</sub><br />Tailscale 家庭服务统一域名与自动 HTTPS：DNSPod DNS-01、Nginx 双地址反向代理、受限 SSH 证书同步及 systemd 定时任务。</p>
-
-<br />
-
-### 03 / 代码之外，写下来 <sub>NOTES FROM THE LAB</sub>
-
-在 **[寒森博客 · likeyy.love](https://likeyy.love)** 记录工程实践、踩坑过程和生活。下面是最近发布的文章：
-
-<p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-01-ddd-modulith"><strong>从零重构外卖系统（一）：先理解业务，再用 Spring Modulith 搭建 DDD 骨架 ↗</strong></a></p>
-
-<p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-02-employee-identity"><strong>从零重构外卖系统（二）：把员工账号规则落地为领域模型、JPA 和 REST API ↗</strong></a></p>
-
-<p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-03-catalog-consistency"><strong>从零重构外卖系统（三）：商品、套餐与营业状态，怎样从 CRUD 走向业务建模 ↗</strong></a></p>
-
-<p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-04-customer-cart"><strong>从零重构外卖系统（四）：顾客身份、默认地址与购物车，怎样设计归属和一致性 ↗</strong></a></p>
-
-<p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-05-order-idempotency"><strong>从零重构外卖系统（五）：订单快照、幂等提交与购物车结算，怎样保证一次下单只发生一次 ↗</strong></a></p>
-
-**[去博客继续阅读 ↗](https://likeyy.love)** &nbsp; · &nbsp; [RSS 订阅](https://likeyy.love/rss.xml)
-
-<br />
-
-### 04 / 常用装备 <sub>MY TOOLBOX</sub>
-
-<p align="center">
-<a href="https://dev.java/"><img src="assets/generated/tool-java.svg" width="76" height="93" alt="Java" /></a>
-<a href="https://www.postgresql.org/"><img src="assets/generated/tool-postgresql.svg" width="76" height="93" alt="PostgreSQL" /></a>
-<a href="https://www.mysql.com/"><img src="assets/generated/tool-mysql.svg" width="76" height="93" alt="MySQL" /></a>
-<a href="https://redis.io/"><img src="assets/generated/tool-redis.svg" width="76" height="93" alt="Redis" /></a>
-<a href="https://www.rust-lang.org/"><img src="assets/generated/tool-rust.svg" width="76" height="93" alt="Rust" /></a>
-<a href="https://www.python.org/"><img src="assets/generated/tool-python.svg" width="76" height="93" alt="Python" /></a>
-<a href="https://podman.io/"><img src="assets/generated/tool-podman.svg" width="76" height="93" alt="Podman" /></a>
-<a href="https://git-scm.com/"><img src="assets/generated/tool-git.svg" width="76" height="93" alt="Git" /></a>
-<a href="https://tailscale.com/"><img src="assets/generated/tool-tailscale.svg" width="76" height="93" alt="Tailscale" /></a>
-<a href="https://www.proxmox.com/"><img src="assets/generated/tool-proxmox.svg" width="76" height="93" alt="Proxmox" /></a>
-</p>
-
-<p align="center">
-  <sub>Java / Spring · SQL / Cache · Rust / Python · Containers / Homelab</sub>
-</p>
-
-<br />
-
-### 05 / 一点一滴 <sub>THE COMMIT TRAIL</sub>
-
-<p align="center">
-  <img src="assets/generated/contributions.svg" width="100%" alt="GitHub 贡献记录的贪吃蛇动画，每天自动更新" />
-</p>
-
-<p align="center">
-  <strong>Keep building. Stay curious.</strong><br />
-  <sub>在代码与生活之间，保持好奇。</sub>
-</p>
+[阅读全部文章 →](https://likeyy.love)
 
 ---
 
-<p align="center">
-  <sub>项目与文章内容更新于 2026-09-25 19:40 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
-  Icons from <a href="https://dashboardicons.com/">Dashboard Icons</a> · <a href="docs/PROFILE.md">关于这个主页</a></sub>
-</p>
+### 不错过下一篇
+
+把 RSS 加入你喜欢的阅读器，让新文章自己来找你。
+
+[获取 RSS 订阅链接 ↗](https://likeyy.love/rss.xml)
+
+<br />
+
+<sub>慢慢探索，认真记录。</sub>
+
+<!-- 文章内容更新于 2026-09-27 22:28 CST (UTC+8)；维护说明见 docs/PROFILE.md。 -->

@@ -12,7 +12,7 @@ on:
       - '.profile/README.template.md'
       - 'scripts/**'
       - 'tests/**'
-      - 'assets/icons/**'
+      - 'assets/hero*.svg'
       - '.github/workflows/update-profile.yml'
 
 permissions:
@@ -44,40 +44,8 @@ jobs:
       - name: Test generator
         run: python -m unittest discover -s tests -v
 
-      - name: Refresh projects and blog posts
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - name: Refresh blog posts
         run: python scripts/update_profile.py
-
-      - name: Refresh contribution animation
-        id: snake
-        continue-on-error: true
-        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          github_token: ${{ github.token }}
-          # Generate in runner temp; replace the checked-in fallback only on success.
-          outputs: |
-            ${{ runner.temp }}/contributions.svg?color_snake=#b6a0ff&color_dots=#192330,#35533d,#608b47,#8ec95d,#b4f272
-
-      - name: Install successful animation
-        if: steps.snake.outcome == 'success'
-        env:
-          SNAKE_FILE: ${{ runner.temp }}/contributions.svg
-        run: |
-          python - <<'PY'
-          import os
-          from pathlib import Path
-          import xml.etree.ElementTree as ET
-          source = Path(os.environ['SNAKE_FILE'])
-          data = source.read_bytes()
-          assert ET.fromstring(data).tag == '{http://www.w3.org/2000/svg}svg'
-          Path('assets/generated/contributions.svg').write_bytes(data)
-          PY
-
-      - name: Report animation fallback
-        if: steps.snake.outcome != 'success'
-        run: echo 'Contribution refresh failed; kept the checked-in animation.' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Verify generated profile
         run: python scripts/update_profile.py --check
@@ -86,14 +54,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add README.md .profile/cache.json assets/generated/
+          git add README.md .profile/cache.json
           if git diff --cached --quiet; then
             echo 'Profile is already up to date.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'chore(profile): refresh projects, articles and contributions'
+          git commit -m 'chore(profile): refresh blog posts'
           # Authenticate only this step through gh's environment-backed helper.
           gh auth setup-git --hostname github.com
           # A concurrent human push causes a safe failure; never force-push.
