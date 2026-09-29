@@ -104,6 +104,11 @@
   },
   "posts": [
     {
+      "title": "Create Delight Remake v0.5.0.15 客户端使用说明",
+      "url": "https://likeyy.love/archives/mc-server",
+      "published": "2026-09-28T13:06:51+00:00"
+    },
+    {
       "title": "翻墙技术详解：从代理与 VPN 到现代抗封锁网络",
       "url": "https://likeyy.love/archives/internet-censorship-circumvention",
       "published": "2026-09-27T12:36:49+00:00"
@@ -122,12 +127,7 @@
       "title": "从零重构外卖系统（三）：商品、套餐与营业状态，怎样从 CRUD 走向业务建模",
       "url": "https://likeyy.love/archives/han-menu-03-catalog-consistency",
       "published": "2026-09-22T14:34:49+00:00"
-    },
-    {
-      "title": "从零重构外卖系统（四）：顾客身份、默认地址与购物车，怎样设计归属和一致性",
-      "url": "https://likeyy.love/archives/han-menu-04-customer-cart",
-      "published": "2026-09-22T14:34:48+00:00"
     }
   ],
-  "updated_at": "2026-09-27 22:38 CST (UTC+8)"
+  "updated_at": "2026-09-29 15:00 CST (UTC+8)"
 }

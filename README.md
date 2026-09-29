@@ -65,6 +65,8 @@
 
 <sub>来自 Hanserwei 的博客 · RSS</sub>
 
+<p><sub>2026-09-28</sub><br /><a href="https://likeyy.love/archives/mc-server">Create Delight Remake v0.5.0.15 客户端使用说明 ↗</a></p>
+
 <p><sub>2026-09-27</sub><br /><a href="https://likeyy.love/archives/internet-censorship-circumvention">翻墙技术详解：从代理与 VPN 到现代抗封锁网络 ↗</a></p>
 
 <p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-01-ddd-modulith">从零重构外卖系统（一）：先理解业务，再用 Spring Modulith 搭建 DDD 骨架 ↗</a></p>
@@ -72,8 +74,6 @@
 <p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-02-employee-identity">从零重构外卖系统（二）：把员工账号规则落地为领域模型、JPA 和 REST API ↗</a></p>
 
 <p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-03-catalog-consistency">从零重构外卖系统（三）：商品、套餐与营业状态，怎样从 CRUD 走向业务建模 ↗</a></p>
-
-<p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-04-customer-cart">从零重构外卖系统（四）：顾客身份、默认地址与购物车，怎样设计归属和一致性 ↗</a></p>
 
 [阅读全部文章 →](https://likeyy.love)
 
@@ -115,6 +115,6 @@
 <sub>慢慢探索，认真记录。</sub>
 
 <p>
-  <sub>项目与文章内容更新于 2026-09-27 22:38 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
+  <sub>项目与文章内容更新于 2026-09-29 15:00 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
   图标来自 <a href="https://dashboardicons.com/">Dashboard Icons</a> · <a href="assets/icons/NOTICE.md">图标授权</a> · <a href="docs/PROFILE.md">关于这个主页</a></sub>
 </p>
