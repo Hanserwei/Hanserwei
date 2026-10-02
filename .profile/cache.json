@@ -3,6 +3,13 @@
     "public_repos": 22,
     "repos": [
       {
+        "name": "hanlo-theme",
+        "description": "halo-theme-hao 独立维护版本",
+        "language": "HTML",
+        "stars": 0,
+        "pushed_at": "2026-10-01T22:14:49Z"
+      },
+      {
         "name": "hanserwei-springboot-ddd",
         "description": "Spring Boot 4.1 and JDK 25 DDD scaffold",
         "language": "Java",
@@ -15,13 +22,6 @@
         "language": "Java",
         "stars": 0,
         "pushed_at": "2026-09-30T09:21:33Z"
-      },
-      {
-        "name": "hanlo-theme",
-        "description": "halo-theme-hao 独立维护版本",
-        "language": "HTML",
-        "stars": 0,
-        "pushed_at": "2026-09-24T04:50:19Z"
       },
       {
         "name": "tailscale-home-services",
@@ -129,5 +129,5 @@
       "published": "2026-09-22T14:34:49+00:00"
     }
   ],
-  "updated_at": "2026-10-01 15:14 CST (UTC+8)"
+  "updated_at": "2026-10-02 15:04 CST (UTC+8)"
 }
