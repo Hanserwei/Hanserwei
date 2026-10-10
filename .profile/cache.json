@@ -1,7 +1,14 @@
 {
   "github": {
-    "public_repos": 22,
+    "public_repos": 23,
     "repos": [
+      {
+        "name": "telegram_bot",
+        "description": "Telegram 图片、视频与混合相册发布机器人，部署于 Cloudflare Workers，使用 Telegraph 展示内容。",
+        "language": "TypeScript",
+        "stars": 0,
+        "pushed_at": "2026-10-09T15:11:04Z"
+      },
       {
         "name": "hanlo-theme",
         "description": "halo-theme-hao 独立维护版本",
@@ -129,5 +136,5 @@
       "published": "2026-09-22T14:34:49+00:00"
     }
   ],
-  "updated_at": "2026-10-02 15:04 CST (UTC+8)"
+  "updated_at": "2026-10-10 15:15 CST (UTC+8)"
 }

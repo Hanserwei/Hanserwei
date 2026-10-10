@@ -22,7 +22,7 @@
 <p align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/generated/pulse-mobile.svg" />
-    <img src="assets/generated/pulse.svg" width="100%" alt="22 个公开仓库 · 6 个精选项目 · 博客 likeyy.love · 最近代码推送 2026-10-01" />
+    <img src="assets/generated/pulse.svg" width="100%" alt="23 个公开仓库 · 6 个精选项目 · 博客 likeyy.love · 最近代码推送 2026-10-09" />
   </picture>
 </p>
 
@@ -53,13 +53,13 @@
 
 ## 最近在写
 
+<p><a href="https://github.com/Hanserwei/telegram_bot"><strong>telegram_bot ↗</strong></a> &nbsp; <sub>TypeScript · 2026-10-09</sub><br />Telegram 图片、视频与混合相册发布机器人，部署于 Cloudflare Workers，使用 Telegraph 展示内容。</p>
+
 <p><a href="https://github.com/Hanserwei/hanlo-theme"><strong>hanlo-theme ↗</strong></a> &nbsp; <sub>HTML · 2026-10-01</sub><br />halo-theme-hao 独立维护版本</p>
 
 <p><a href="https://github.com/Hanserwei/hanserwei-springboot-ddd"><strong>hanserwei-springboot-ddd ↗</strong></a> &nbsp; <sub>Java · 2026-09-30</sub><br />Spring Boot 4.1 and JDK 25 DDD scaffold</p>
 
 <p><a href="https://github.com/Hanserwei/han-menu"><strong>han-menu ↗</strong></a> &nbsp; <sub>Java · 2026-09-30</sub><br />外卖业务 DDD 模块化单体：Java 25 / Spring Boot 后端与 Vue 3 管理端，支持 Podman 本机部署。</p>
-
-<p><a href="https://github.com/Hanserwei/tailscale-home-services"><strong>tailscale-home-services ↗</strong></a> &nbsp; <sub>Python · 2026-09-17</sub><br />Tailscale 家庭服务统一域名与自动 HTTPS：DNSPod DNS-01、Nginx 双地址反向代理、受限 SSH 证书同步及 systemd 定时任务。</p>
 
 ## 最近写下的
 
@@ -115,6 +115,6 @@
 <sub>慢慢探索，认真记录。</sub>
 
 <p>
-  <sub>项目与文章内容更新于 2026-10-02 15:04 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
+  <sub>项目与文章内容更新于 2026-10-10 15:15 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
   图标来自 <a href="https://dashboardicons.com/">Dashboard Icons</a> · <a href="assets/icons/NOTICE.md">图标授权</a> · <a href="docs/PROFILE.md">关于这个主页</a></sub>
 </p>
