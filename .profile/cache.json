@@ -1,7 +1,21 @@
 {
   "github": {
-    "public_repos": 24,
+    "public_repos": 25,
     "repos": [
+      {
+        "name": "accessory-management-design-assets",
+        "description": "Images and Archify previews for the accessory management design document",
+        "language": "Code",
+        "stars": 0,
+        "pushed_at": "2026-10-15T03:28:24Z"
+      },
+      {
+        "name": "han-menu",
+        "description": "外卖业务 DDD 模块化单体：Java 25 / Spring Boot 后端与 Vue 3 管理端，支持 Podman 本机部署。",
+        "language": "Java",
+        "stars": 0,
+        "pushed_at": "2026-10-14T13:31:36Z"
+      },
       {
         "name": "telegram_bot",
         "description": "Telegram 图片、视频与混合相册发布机器人，部署于 Cloudflare Workers，使用 Telegraph 展示内容。",
@@ -22,13 +36,6 @@
         "language": "Java",
         "stars": 2,
         "pushed_at": "2026-09-30T13:33:13Z"
-      },
-      {
-        "name": "han-menu",
-        "description": "外卖业务 DDD 模块化单体：Java 25 / Spring Boot 后端与 Vue 3 管理端，支持 Podman 本机部署。",
-        "language": "Java",
-        "stars": 0,
-        "pushed_at": "2026-09-30T09:21:33Z"
       },
       {
         "name": "tailscale-home-services",
@@ -136,5 +143,5 @@
       "published": "2026-09-22T14:34:49+00:00"
     }
   ],
-  "updated_at": "2026-10-12 15:27 CST (UTC+8)"
+  "updated_at": "2026-10-15 13:56 CST (UTC+8)"
 }
