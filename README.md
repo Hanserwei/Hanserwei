@@ -22,7 +22,7 @@
 <p align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/generated/pulse-mobile.svg" />
-    <img src="assets/generated/pulse.svg" width="100%" alt="25 个公开仓库 · 6 个精选项目 · 博客 likeyy.love · 最近代码推送 2026-10-15" />
+    <img src="assets/generated/pulse.svg" width="100%" alt="28 个公开仓库 · 6 个精选项目 · 博客 likeyy.love · 最近代码推送 2026-10-16" />
   </picture>
 </p>
 
@@ -53,19 +53,17 @@
 
 ## 最近在写
 
-<p><a href="https://github.com/Hanserwei/accessory-management-design-assets"><strong>accessory-management-design-assets ↗</strong></a> &nbsp; <sub>Code · 2026-10-15</sub><br />Images and Archify previews for the accessory management design document</p>
+<p><a href="https://github.com/Hanserwei/google-java-style-zh"><strong>google-java-style-zh ↗</strong></a> &nbsp; <sub>HTML · 2026-10-16</sub><br />Google Java 开发规范中文版，由 Gemini 翻译，使用 GitHub Pages 提供阅读。</p>
 
-<p><a href="https://github.com/Hanserwei/han-menu"><strong>han-menu ↗</strong></a> &nbsp; <sub>Java · 2026-10-14</sub><br />外卖业务 DDD 模块化单体：Java 25 / Spring Boot 后端与 Vue 3 管理端，支持 Podman 本机部署。</p>
+<p><a href="https://github.com/Hanserwei/hanlo-theme"><strong>hanlo-theme ↗</strong></a> &nbsp; <sub>HTML · 2026-10-16</sub><br />halo-theme-hao 独立维护版本</p>
 
-<p><a href="https://github.com/Hanserwei/telegram_bot"><strong>telegram_bot ↗</strong></a> &nbsp; <sub>TypeScript · 2026-10-09</sub><br />Telegram 图片、视频与混合相册发布机器人，部署于 Cloudflare Workers，使用 Telegraph 展示内容。</p>
+<p><a href="https://github.com/Hanserwei/plugin-equipment"><strong>plugin-equipment ↗</strong></a> &nbsp; <sub>Java · 2026-10-16</sub><br />独立维护的 Halo 装备管理插件，支持结构化装备参数、Hanlo 主题和 CLI 管理</p>
 
-<p><a href="https://github.com/Hanserwei/hanlo-theme"><strong>hanlo-theme ↗</strong></a> &nbsp; <sub>HTML · 2026-10-01</sub><br />halo-theme-hao 独立维护版本</p>
+<p><a href="https://github.com/Hanserwei/halo-cli"><strong>halo-cli ↗</strong></a> &nbsp; <sub>TypeScript · 2026-10-16</sub><br />Halo 插件配套命令行工具，用于管理文章、分类和标签</p>
 
 ## 最近写下的
 
 <sub>来自 Hanserwei 的博客 · RSS</sub>
-
-<p><sub>2026-09-28</sub><br /><a href="https://likeyy.love/archives/mc-server">Create Delight Remake v0.5.0.15 客户端使用说明 ↗</a></p>
 
 <p><sub>2026-09-27</sub><br /><a href="https://likeyy.love/archives/internet-censorship-circumvention">翻墙技术详解：从代理与 VPN 到现代抗封锁网络 ↗</a></p>
 
@@ -74,6 +72,8 @@
 <p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-02-employee-identity">从零重构外卖系统（二）：把员工账号规则落地为领域模型、JPA 和 REST API ↗</a></p>
 
 <p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-03-catalog-consistency">从零重构外卖系统（三）：商品、套餐与营业状态，怎样从 CRUD 走向业务建模 ↗</a></p>
+
+<p><sub>2026-09-22</sub><br /><a href="https://likeyy.love/archives/han-menu-04-customer-cart">从零重构外卖系统（四）：顾客身份、默认地址与购物车，怎样设计归属和一致性 ↗</a></p>
 
 [阅读全部文章 →](https://likeyy.love)
 
@@ -115,6 +115,6 @@
 <sub>慢慢探索，认真记录。</sub>
 
 <p>
-  <sub>项目与文章内容更新于 2026-10-16 13:55 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
+  <sub>项目与文章内容更新于 2026-10-17 13:40 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
   图标来自 <a href="https://dashboardicons.com/">Dashboard Icons</a> · <a href="assets/icons/NOTICE.md">图标授权</a> · <a href="docs/PROFILE.md">关于这个主页</a></sub>
 </p>

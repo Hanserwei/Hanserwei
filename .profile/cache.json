@@ -1,7 +1,42 @@
 {
   "github": {
-    "public_repos": 25,
+    "public_repos": 28,
     "repos": [
+      {
+        "name": "google-java-style-zh",
+        "description": "Google Java 开发规范中文版，由 Gemini 翻译，使用 GitHub Pages 提供阅读。",
+        "language": "HTML",
+        "stars": 0,
+        "pushed_at": "2026-10-16T17:49:38Z"
+      },
+      {
+        "name": "hanlo-theme",
+        "description": "halo-theme-hao 独立维护版本",
+        "language": "HTML",
+        "stars": 0,
+        "pushed_at": "2026-10-16T17:14:54Z"
+      },
+      {
+        "name": "plugin-equipment",
+        "description": "独立维护的 Halo 装备管理插件，支持结构化装备参数、Hanlo 主题和 CLI 管理",
+        "language": "Java",
+        "stars": 0,
+        "pushed_at": "2026-10-16T16:31:13Z"
+      },
+      {
+        "name": "halo-cli",
+        "description": "Halo 插件配套命令行工具，用于管理文章、分类和标签",
+        "language": "TypeScript",
+        "stars": 0,
+        "pushed_at": "2026-10-16T16:17:55Z"
+      },
+      {
+        "name": "plugin-mail-template",
+        "description": "Halo 邮件模板管理插件，支持 Console、Halo CLI 和 MCP 集成",
+        "language": "Java",
+        "stars": 0,
+        "pushed_at": "2026-10-16T14:44:25Z"
+      },
       {
         "name": "accessory-management-design-assets",
         "description": "Images and Archify previews for the accessory management design document",
@@ -22,13 +57,6 @@
         "language": "TypeScript",
         "stars": 0,
         "pushed_at": "2026-10-09T15:11:04Z"
-      },
-      {
-        "name": "hanlo-theme",
-        "description": "halo-theme-hao 独立维护版本",
-        "language": "HTML",
-        "stars": 0,
-        "pushed_at": "2026-10-01T22:14:49Z"
       },
       {
         "name": "hanserwei-springboot-ddd",
@@ -87,13 +115,6 @@
         "pushed_at": "2026-09-03T12:15:37Z"
       },
       {
-        "name": "halo-cli",
-        "description": "Halo 插件配套命令行工具，用于管理文章、分类和标签",
-        "language": "TypeScript",
-        "stars": 0,
-        "pushed_at": "2026-08-31T15:26:56Z"
-      },
-      {
         "name": "han-note-2.0",
         "description": "hannote — Spring Boot 4.1 + Spring Cloud Alibaba 2025.1.0 微服务练习项目（个人学习复刻，MyBatis-Plus + PostgreSQL + HikariCP）",
         "language": "Java",
@@ -118,11 +139,6 @@
   },
   "posts": [
     {
-      "title": "Create Delight Remake v0.5.0.15 客户端使用说明",
-      "url": "https://likeyy.love/archives/mc-server",
-      "published": "2026-09-28T13:06:51+00:00"
-    },
-    {
       "title": "翻墙技术详解：从代理与 VPN 到现代抗封锁网络",
       "url": "https://likeyy.love/archives/internet-censorship-circumvention",
       "published": "2026-09-27T12:36:49+00:00"
@@ -141,7 +157,12 @@
       "title": "从零重构外卖系统（三）：商品、套餐与营业状态，怎样从 CRUD 走向业务建模",
       "url": "https://likeyy.love/archives/han-menu-03-catalog-consistency",
       "published": "2026-09-22T14:34:49+00:00"
+    },
+    {
+      "title": "从零重构外卖系统（四）：顾客身份、默认地址与购物车，怎样设计归属和一致性",
+      "url": "https://likeyy.love/archives/han-menu-04-customer-cart",
+      "published": "2026-09-22T14:34:48+00:00"
     }
   ],
-  "updated_at": "2026-10-16 13:55 CST (UTC+8)"
+  "updated_at": "2026-10-17 13:40 CST (UTC+8)"
 }
