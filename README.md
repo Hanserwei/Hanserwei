@@ -22,7 +22,7 @@
 <p align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/generated/pulse-mobile.svg" />
-    <img src="assets/generated/pulse.svg" width="100%" alt="28 个公开仓库 · 6 个精选项目 · 博客 likeyy.love · 最近代码推送 2026-10-17" />
+    <img src="assets/generated/pulse.svg" width="100%" alt="30 个公开仓库 · 6 个精选项目 · 博客 likeyy.love · 最近代码推送 2026-10-18" />
   </picture>
 </p>
 
@@ -53,13 +53,13 @@
 
 ## 最近在写
 
+<p><a href="https://github.com/Hanserwei/release-watch"><strong>release-watch ↗</strong></a> &nbsp; <sub>TypeScript · 2026-10-18</sub><br />GitHub release monitoring on Cloudflare Workers, with Telegram cover notifications and optional DeepSeek Chinese changelog summaries.</p>
+
 <p><a href="https://github.com/Hanserwei/halo-cli"><strong>halo-cli ↗</strong></a> &nbsp; <sub>TypeScript · 2026-10-17</sub><br />Halo 内容管理命令行与配套 Console 插件：支持多站点、专用访问密钥、内容与配置管理及 JSON 自动化工作流。</p>
 
 <p><a href="https://github.com/Hanserwei/plugin-mail-template"><strong>plugin-mail-template ↗</strong></a> &nbsp; <sub>Java · 2026-10-17</sub><br />Halo 邮件通知模板管理插件：支持自定义模板、默认恢复、模拟校验、验证发送，以及 Console、CLI 与 MCP 集成。</p>
 
 <p><a href="https://github.com/Hanserwei/hanlo-theme"><strong>hanlo-theme ↗</strong></a> &nbsp; <sub>HTML · 2026-10-17</sub><br />Hanlo：由 Hanserwei 独立维护的 Halo 2.x 响应式博客主题，支持亮暗模式、丰富内容渲染与模块化前端。</p>
-
-<p><a href="https://github.com/Hanserwei/plugin-equipment"><strong>plugin-equipment ↗</strong></a> &nbsp; <sub>Java · 2026-10-17</sub><br />han-equipment：独立维护的 Halo 装备展示插件，支持设备分组、有序配置参数、使用状态与 Hanlo 主题集成。</p>
 
 ## 最近写下的
 
@@ -115,6 +115,6 @@
 <sub>慢慢探索，认真记录。</sub>
 
 <p>
-  <sub>项目与文章内容更新于 2026-10-18 14:01 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
+  <sub>项目与文章内容更新于 2026-10-19 14:18 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
   图标来自 <a href="https://dashboardicons.com/">Dashboard Icons</a> · <a href="assets/icons/NOTICE.md">图标授权</a> · <a href="docs/PROFILE.md">关于这个主页</a></sub>
 </p>
