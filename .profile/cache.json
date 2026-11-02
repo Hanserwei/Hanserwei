@@ -3,6 +3,13 @@
     "public_repos": 30,
     "repos": [
       {
+        "name": "hanlo-theme",
+        "description": "Hanlo：由 Hanserwei 独立维护的 Halo 2.x 响应式博客主题，支持亮暗模式、丰富内容渲染与模块化前端。",
+        "language": "HTML",
+        "stars": 1,
+        "pushed_at": "2026-11-01T22:14:08Z"
+      },
+      {
         "name": "release-watch",
         "description": "GitHub release monitoring on Cloudflare Workers, with Telegram cover notifications and optional DeepSeek Chinese changelog summaries.",
         "language": "TypeScript",
@@ -22,13 +29,6 @@
         "language": "Java",
         "stars": 0,
         "pushed_at": "2026-10-17T09:01:29Z"
-      },
-      {
-        "name": "hanlo-theme",
-        "description": "Hanlo：由 Hanserwei 独立维护的 Halo 2.x 响应式博客主题，支持亮暗模式、丰富内容渲染与模块化前端。",
-        "language": "HTML",
-        "stars": 1,
-        "pushed_at": "2026-10-17T09:00:38Z"
       },
       {
         "name": "plugin-equipment",
@@ -171,5 +171,5 @@
       "published": "2026-09-22T14:34:49+00:00"
     }
   ],
-  "updated_at": "2026-10-20 14:06 CST (UTC+8)"
+  "updated_at": "2026-11-02 15:45 CST (UTC+8)"
 }
