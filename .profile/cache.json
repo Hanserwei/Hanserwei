@@ -1,7 +1,14 @@
 {
   "github": {
-    "public_repos": 30,
+    "public_repos": 31,
     "repos": [
+      {
+        "name": "krill-monitor",
+        "description": "Kotlin Multiplatform 账户监控与 Android API Key 管理工具，支持渠道状态与认证加密存储。MIT License.",
+        "language": "Kotlin",
+        "stars": 0,
+        "pushed_at": "2026-11-08T12:12:51Z"
+      },
       {
         "name": "telegram_bot",
         "description": "Telegram 图片、视频与混合相册发布机器人，部署于 Cloudflare Workers，使用 Telegraph 展示内容。",
@@ -171,5 +178,5 @@
       "published": "2026-09-22T14:34:49+00:00"
     }
   ],
-  "updated_at": "2026-11-08 15:28 CST (UTC+8)"
+  "updated_at": "2026-11-09 16:06 CST (UTC+8)"
 }
