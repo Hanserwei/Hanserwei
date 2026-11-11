@@ -22,7 +22,7 @@
 <p align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/generated/pulse-mobile.svg" />
-    <img src="assets/generated/pulse.svg" width="100%" alt="31 个公开仓库 · 6 个精选项目 · 博客 likeyy.love · 最近代码推送 2026-11-09" />
+    <img src="assets/generated/pulse.svg" width="100%" alt="31 个公开仓库 · 6 个精选项目 · 博客 likeyy.love · 最近代码推送 2026-11-11" />
   </picture>
 </p>
 
@@ -53,7 +53,7 @@
 
 ## 最近在写
 
-<p><a href="https://github.com/Hanserwei/krill-monitor"><strong>krill-monitor ↗</strong></a> &nbsp; <sub>Kotlin · 2026-11-09</sub><br />Kotlin Multiplatform 账户监控与 Android API Key 管理工具，支持渠道状态与认证加密存储。MIT License.</p>
+<p><a href="https://github.com/Hanserwei/krill-monitor"><strong>krill-monitor ↗</strong></a> &nbsp; <sub>Kotlin · 2026-11-11</sub><br />Kotlin Multiplatform 账户监控与 Android API Key 管理工具，支持渠道状态与认证加密存储。MIT License.</p>
 
 <p><a href="https://github.com/Hanserwei/telegram_bot"><strong>telegram_bot ↗</strong></a> &nbsp; <sub>TypeScript · 2026-11-07</sub><br />Telegram 图片、视频与混合相册发布机器人，部署于 Cloudflare Workers，使用 Telegraph 展示内容。</p>
 
@@ -115,6 +115,6 @@
 <sub>慢慢探索，认真记录。</sub>
 
 <p>
-  <sub>项目与文章内容更新于 2026-11-10 16:28 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
+  <sub>项目与文章内容更新于 2026-11-11 15:48 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
   图标来自 <a href="https://dashboardicons.com/">Dashboard Icons</a> · <a href="assets/icons/NOTICE.md">图标授权</a> · <a href="docs/PROFILE.md">关于这个主页</a></sub>
 </p>
