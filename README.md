@@ -22,7 +22,7 @@
 <p align="center">
   <picture>
     <source media="(max-width: 600px)" srcset="assets/generated/pulse-mobile.svg" />
-    <img src="assets/generated/pulse.svg" width="100%" alt="31 个公开仓库 · 6 个精选项目 · 博客 likeyy.love · 最近代码推送 2026-11-15" />
+    <img src="assets/generated/pulse.svg" width="100%" alt="32 个公开仓库 · 6 个精选项目 · 博客 likeyy.love · 最近代码推送 2026-11-15" />
   </picture>
 </p>
 
@@ -115,6 +115,6 @@
 <sub>慢慢探索，认真记录。</sub>
 
 <p>
-  <sub>项目与文章内容更新于 2026-11-16 16:03 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
+  <sub>项目与文章内容更新于 2026-11-24 19:05 CST (UTC+8) · <a href="https://github.com/Hanserwei/Hanserwei/actions/workflows/update-profile.yml">每日自动同步</a><br />
   图标来自 <a href="https://dashboardicons.com/">Dashboard Icons</a> · <a href="assets/icons/NOTICE.md">图标授权</a> · <a href="docs/PROFILE.md">关于这个主页</a></sub>
 </p>
